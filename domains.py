@@ -1,0 +1,15 @@
+import pandas as pd
+import numpy as np
+import read
+from collections import Counter
+import operator
+
+if __name__ == "__main__":
+    df = read.load_data()
+    domains = df['url'].value_counts()
+    x = 0
+    for name, row in domains.items():
+        print("{0}: {1}".format(name, row))
+        x+=1
+        if x==99:
+            break;
